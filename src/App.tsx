@@ -19,8 +19,7 @@ function App() {
 
   const [newTaskContent, setNewTaskContent] = useState<string>("");
 
-  const doneTasks =
-    tasks.length > 0 ? tasks.filter((task) => task.checked === true).length : 0;
+  const doneTasks = tasks.filter((task) => task.checked === true).length;
 
   const isNewTaskEmpty = !newTaskContent;
 
@@ -102,10 +101,17 @@ function App() {
           </strong>
 
           <strong>
-            Concluídas <span>{doneTasks}</span>
+            Concluídas{" "}
+            <span>
+              {doneTasks > 0
+                ? tasks.filter((task) => task.checked === true).length +
+                  " de " +
+                  tasks.length
+                : 0}
+            </span>
           </strong>
         </header>
-        {tasks.length ? (
+        {tasks.length > 0 ? (
           tasks.map((task) => (
             <TaskCard
               key={task.task}
