@@ -1,0 +1,39 @@
+.card {
+  padding: 1rem;
+  background: var(--gray-500);
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 2px solid var(--gray-400);
+}
+
+.card p {
+  font-size: 0.875rem;
+  color: var(--gray-100);
+}
+
+.card button {
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+  color: var(--gray-300);
+
+  line-height: 0;
+  border-radius: 2px;
+}
+
+.card button:hover {
+  color: var(--danger);
+}
+
+.card button img {
+  height: 1.875rem;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 0.75rem;
+}

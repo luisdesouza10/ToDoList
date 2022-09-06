@@ -71,6 +71,7 @@
   background: var(--gray-400);
   border-radius: 999px;
   color: var(--gray-200);
+  font-size: 0.75rem;
 }
 
 .emptyListContainer {
