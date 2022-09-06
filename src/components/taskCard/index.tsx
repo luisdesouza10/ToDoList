@@ -9,7 +9,7 @@ export function TaskCard({
   onClickDelete,
 }: TaskCardProps) {
   return (
-    <div className={styles.card}>
+    <div className={checked ? styles.cardChecked : styles.card}>
       <div>
         <input
           type="checkbox"
