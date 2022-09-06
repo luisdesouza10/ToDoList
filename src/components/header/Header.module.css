@@ -1,0 +1,9 @@
+.headerContainer {
+  background: var(--gray-700);
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 0;
+}
+.headerContainer img {
+  height: 2.25rem;
+}
