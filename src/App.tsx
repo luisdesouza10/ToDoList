@@ -1,5 +1,7 @@
 import { Header } from "./components";
 import plus from "./assets/plus.svg";
+import clipboard from "./assets/clipboard.svg";
+
 import styles from "./App.module.css";
 import "./global.css";
 
@@ -25,7 +27,11 @@ function App() {
             Concluídas <span>0</span>
           </strong>
         </header>
-        <div className={styles.emptyListContainer}></div>
+        <div className={styles.emptyListContainer}>
+          <img src={clipboard} />
+          <strong>Você ainda não tem tarefas cadastradas</strong>
+          <p>Crie tarefas e organize seus itens a fazer</p>
+        </div>
       </div>
     </div>
   );

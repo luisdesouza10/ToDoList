@@ -74,9 +74,29 @@
 }
 
 .emptyListContainer {
-  padding: 1.5rem 4rem;
+  padding: 4rem 1.5rem;
   border-radius: 0.5rem;
   border-top: 1px solid var(--gray-400);
+
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyListContainer img {
+  width: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.emptyListContainer strong {
+  color: var(--gray-300);
+  line-height: 140%;
+}
+
+.emptyListContainer p {
+  color: var(--gray-300);
+  line-height: 140%;
 }
 
 @media (max-width: 768px) {
