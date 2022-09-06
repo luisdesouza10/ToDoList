@@ -1,5 +1,3 @@
-import { Task } from "./task";
-
 export interface TaskCardProps {
   checked: boolean;
   task: string;
