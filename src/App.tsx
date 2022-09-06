@@ -25,6 +25,7 @@ function App() {
             Concluídas <span>0</span>
           </strong>
         </header>
+        <div className={styles.emptyListContainer}></div>
       </div>
     </div>
   );

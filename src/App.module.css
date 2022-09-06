@@ -55,6 +55,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .wrapper header strong {
@@ -70,6 +71,12 @@
   background: var(--gray-400);
   border-radius: 999px;
   color: var(--gray-200);
+}
+
+.emptyListContainer {
+  padding: 1.5rem 4rem;
+  border-radius: 0.5rem;
+  border-top: 1px solid var(--gray-400);
 }
 
 @media (max-width: 768px) {
