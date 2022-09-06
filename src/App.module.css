@@ -114,3 +114,9 @@
     padding: 1rem;
   }
 }
+
+@media (max-width: 425px) {
+  .addTaskContainer {
+    flex-direction: column;
+  }
+}
