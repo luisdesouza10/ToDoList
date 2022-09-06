@@ -102,14 +102,7 @@ function App() {
           </strong>
 
           <strong>
-            Concluídas{" "}
-            <span>
-              {doneTasks > 0
-                ? tasks.filter((task) => task.checked === true).length +
-                  " de " +
-                  tasks.length
-                : 0}
-            </span>
+            Concluídas <span>{doneTasks}</span>
           </strong>
         </header>
         {tasks.length ? (
