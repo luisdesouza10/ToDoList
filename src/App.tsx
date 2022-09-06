@@ -4,7 +4,13 @@ import clipboard from "./assets/clipboard.svg";
 
 import styles from "./App.module.css";
 import "./global.css";
-import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  InvalidEvent,
+  useEffect,
+  useState,
+} from "react";
 import { Task } from "./model";
 import { TaskCard } from "./components/taskCard";
 
@@ -30,6 +36,11 @@ function App() {
       return taskContent !== task.task;
     });
 
+    localStorage.setItem(
+      "tasksStorage",
+      JSON.stringify(tasksWithoutDeletedOne)
+    );
+
     setTasks(tasksWithoutDeletedOne);
   }
 
@@ -37,6 +48,11 @@ function App() {
     event.preventDefault();
 
     setTasks([...tasks, { checked: false, task: newTaskContent }]);
+
+    localStorage.setItem(
+      "tasksStorage",
+      JSON.stringify([...tasks, { checked: false, task: newTaskContent }])
+    );
 
     setNewTaskContent("");
   }
@@ -50,6 +66,16 @@ function App() {
   function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
     event.target.setCustomValidity("Este campo é obrigatório!");
   }
+
+  useEffect(() => {
+    const arrayStorage = JSON.parse(
+      localStorage.getItem("tasksStorage") || "{}"
+    );
+    if (arrayStorage) {
+      setTasks(arrayStorage);
+    }
+  }, []);
+
   return (
     <div>
       <Header />

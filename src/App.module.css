@@ -1,11 +1,11 @@
 .addTaskContainer {
   max-width: 46rem;
+  width: 100%;
+  display: flex;
   margin: 2rem auto;
   padding: 0 1rem;
 
-  display: grid;
   justify-content: center;
-  grid-template-columns: 648px 90px;
   margin-top: -1.688rem;
   gap: 0.5rem;
 }
@@ -16,6 +16,7 @@
   color: var(--gray-100);
   border-radius: 0.5rem;
   border: 1px solid var(--black);
+  width: 100%;
 }
 
 .addTaskContainer input::placeholder {
@@ -108,5 +109,8 @@
 @media (max-width: 768px) {
   html {
     font-size: 87.5%;
+  }
+  .wrapper {
+    padding: 1rem;
   }
 }
