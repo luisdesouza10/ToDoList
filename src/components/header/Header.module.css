@@ -5,5 +5,16 @@
   padding: 1.25rem 0;
 }
 .headerContainer img {
-  height: 2.25rem;
+  width: 1.375rem;
+  margin-right: 0.75rem;
+}
+
+.headerContainer strong {
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.headerContainer strong span {
+  font-size: 2.5rem;
+  color: var(--darkPurple);
 }

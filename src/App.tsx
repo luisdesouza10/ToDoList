@@ -5,7 +5,7 @@ import "./global.css";
 function App() {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
 
       <div className={styles.wrapper}></div>
     </div>
