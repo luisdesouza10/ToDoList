@@ -1,5 +1,7 @@
 :root {
   --white: #fff;
+  --black: #000;
+
   --gray-100: #f2f2f2;
   --gray-200: #d9d9d9;
   --gray-300: #808080;
@@ -17,7 +19,7 @@
 
 :focus {
   outline: transparent;
-  box-shadow: 0 0 0 2px var(--darkPurple);
+  box-shadow: 0 0 0 1px var(--darkPurple);
 }
 
 * {
