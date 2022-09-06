@@ -15,7 +15,17 @@ function App() {
         </button>
       </form>
 
-      <div className={styles.wrapper}></div>
+      <div className={styles.wrapper}>
+        <header>
+          <strong>
+            Tarefas criadas <span>0</span>
+          </strong>
+
+          <strong>
+            Concluídas <span>0</span>
+          </strong>
+        </header>
+      </div>
     </div>
   );
 }
