@@ -19,9 +19,8 @@ function App() {
 
   const [newTaskContent, setNewTaskContent] = useState<string>("");
 
-  const doneTasks = tasks.length
-    ? tasks.filter((task) => task.checked === true).length
-    : 0;
+  const doneTasks =
+    tasks.length > 0 ? tasks.filter((task) => task.checked === true).length : 0;
 
   const isNewTaskEmpty = !newTaskContent;
 
