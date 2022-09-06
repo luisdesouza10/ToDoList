@@ -10,12 +10,15 @@ export function TaskCard({
 }: TaskCardProps) {
   return (
     <div className={styles.card}>
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={() => onClickCheck(task)}
-      />
-      <p>{task}</p>
+      <div>
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={() => onClickCheck(task)}
+          className={styles.checkbox}
+        />
+        <p>{task}</p>
+      </div>
       <button onClick={() => onClickDelete(task)}>
         <Trash size={20} />
       </button>

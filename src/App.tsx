@@ -4,28 +4,24 @@ import clipboard from "./assets/clipboard.svg";
 
 import styles from "./App.module.css";
 import "./global.css";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
 import { Task } from "./model";
 import { TaskCard } from "./components/taskCard";
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([
-    {
-      checked: false,
-      task: "Olhar tarefas clickup.",
-    },
-    {
-      checked: false,
-      task: "Ativar timetracking.",
-    },
-  ] as Task[]);
+  const [tasks, setTasks] = useState<Task[]>([] as Task[]);
+
+  const [newTaskContent, setNewTaskContent] = useState<string>("");
 
   const doneTasks = tasks.filter((task) => task.checked === true).length;
+
+  const isNewTaskEmpty = !newTaskContent;
 
   function handleCheckTask(taskContent: string) {
     const newTasks = tasks.map((task) =>
       task.task === taskContent ? { ...task, checked: !task.checked } : task
     );
+    console.log(newTasks);
     setTasks(newTasks);
   }
 
@@ -37,12 +33,36 @@ function App() {
     setTasks(tasksWithoutDeletedOne);
   }
 
+  function handleCreateNewTask(event: FormEvent) {
+    event.preventDefault();
+
+    setTasks([...tasks, { checked: false, task: newTaskContent }]);
+
+    setNewTaskContent("");
+  }
+
+  function handleChangeInputTaskContent(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity("");
+
+    setNewTaskContent(event.target.value);
+  }
+
+  function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
+    event.target.setCustomValidity("Este campo é obrigatório!");
+  }
   return (
     <div>
       <Header />
-      <form className={styles.addTaskContainer}>
-        <input type="text" placeholder="Adicione uma nova tarefa" />
-        <button>
+      <form className={styles.addTaskContainer} onSubmit={handleCreateNewTask}>
+        <input
+          type="text"
+          placeholder="Adicione uma nova tarefa"
+          value={newTaskContent}
+          onChange={handleChangeInputTaskContent}
+          required
+          onInvalid={handleNewTaskInvalid}
+        />
+        <button disabled={isNewTaskEmpty}>
           <strong>Criar</strong>
           <img src={plus} />
         </button>

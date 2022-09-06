@@ -37,9 +37,14 @@
   box-shadow: 0px 0px 0px 0px transparent;
 }
 
-.addTaskContainer button:hover {
+.addTaskContainer button[type="submit"]:not(:disabled):hover {
   background: var(--blue);
   transition: 0.2s;
+}
+
+.addTaskContainer button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .addTaskContainer button img {
