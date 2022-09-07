@@ -48,8 +48,11 @@ function App() {
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
-
-    setTasks([...tasks, { checked: false, task: newTaskContent }]);
+    if (tasks.length) {
+      setTasks([...tasks, { checked: false, task: newTaskContent }]);
+    } else {
+      setTasks([{ checked: false, task: newTaskContent }]);
+    }
 
     localStorage.setItem(
       "tasksStorage",
