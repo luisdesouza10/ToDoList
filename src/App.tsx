@@ -29,7 +29,6 @@ function App() {
     const newTasks = tasks.map((task) =>
       task.task === taskContent ? { ...task, checked: !task.checked } : task
     );
-    console.log(newTasks);
     setTasks(newTasks);
   }
 
